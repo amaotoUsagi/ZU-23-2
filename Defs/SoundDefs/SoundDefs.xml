@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+    <SoundDef>
+        <defName>ZU23_Fire</defName>  
+        <context>MapOnly</context>
+        <priorityMode>PrioritizeNewest</priorityMode>
+        <maxVoices>8</maxVoices>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Folder">
+                        <clipPath>ZU23/Shot</clipPath>
+                    </li>
+                </grains>   
+                <sustainLoop>False</sustainLoop>
+                <volumeRange>190~200</volumeRange>
+                <pitchRange>0.90~1.00</pitchRange>
+            </li>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Folder">
+                        <clipPath>ZU23/Tail</clipPath>
+                    </li>
+                </grains>   
+                <sustainLoop>False</sustainLoop>
+                <volumeRange>40~40</volumeRange>
+                <pitchRange>1.00~1.00</pitchRange>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <SoundDef>
+        <defName>ZU23_Tail</defName>  
+        <context>MapOnly</context>
+        <priorityMode>PrioritizeNearest</priorityMode>
+        <maxVoices>8</maxVoices>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <onCamera>True</onCamera>
+                <grains>
+                    <li Class="AudioGrain_Folder">
+                        <clipPath>ZU23/Tail</clipPath>
+                    </li>
+                </grains>   
+                <sustainLoop>False</sustainLoop>
+                <volumeRange>20~25</volumeRange>
+                <pitchRange>1.00~1.00</pitchRange>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <SoundDef>
+        <defName>ZU23_Reload</defName>  
+        <context>MapOnly</context>
+        <priorityMode>PrioritizeNearest</priorityMode>
+        <maxVoices>8</maxVoices>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Folder">
+                        <clipPath>ZU23/Reload</clipPath>
+                    </li>
+                </grains>   
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+</Defs>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+  <ThingDef ParentName="TurretMannedBuildableBase">
+    <defName>Turret_ZU23_Base</defName>
+    <label>ZU-23-2</label>
+    <description>The ZU-23 is a towed 23mm twin barrel light anti-aircraft gun. It is a "small" and simple weapon that provides a high volume of fire. For that reason it remains popular even though its usefulness against aerial targets has reduced over time.\n- The Americans, they're all about that BRRRRRT. The Soviets, they're all about that BAMBAMBAMBAM.</description>
+    <uiIconPath>Things/Building/ZU23/ZU_23_2_Icon</uiIconPath>
+    <graphicData>
+      <texPath>Things/Building/ZU23/ZU_23_2_Base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(4, 4)</drawSize>
+    </graphicData>
+    <statBases>
+      <WorkToBuild>45700</WorkToBuild>
+      <MaxHitPoints>500</MaxHitPoints>
+      <Flammability>0.4</Flammability>
+      <Mass>950</Mass>
+      <Bulk>95.4</Bulk>
+    </statBases>
+    <costList>
+     <Steel>340</Steel>
+      <ComponentIndustrial>11</ComponentIndustrial>
+    </costList>
+    <size>(3,3)</size>
+    <interactionCellOffset>(-1,0,-1)</interactionCellOffset>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <rotatable>true</rotatable>
+    <building>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>Gun_ZU23_Turret</turretGunDef>
+      <turretTopDrawSize>4.2</turretTopDrawSize>
+      <turretBurstCooldownTime>0.35</turretBurstCooldownTime>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_TurretTop</li>
+      <li>PlaceWorker_ShowTurretRadius</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>CE_TurretHeavyWeapons</li>
+    </researchPrerequisites>
+    <minifiedDef>MinifiedThing</minifiedDef>
+  </ThingDef>
+
+  <ThingDef ParentName="TurretMannedBuildableBase">
+    <defName>Turret_ZU23_Static_Base</defName>
+    <label>ZU-23-2 (Static)</label>
+    <description>The ZU-23 is a towed 23mm twin barrel light anti-aircraft gun. It is a "small" and simple weapon that provides a high volume of fire. For that reason it remains popular even though its usefulness against aerial targets has reduced over time.This one is a static version for a more fortified base</description>
+    <uiIconPath>Things/Building/ZU23/ZU_23_2_Static_Icon</uiIconPath>
+    <graphicData>
+      <texPath>Things/Building/ZU23/ZU_23_2_Static_Base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(4, 4)</drawSize>
+    </graphicData>
+    <statBases>
+      <WorkToBuild>45700</WorkToBuild>
+      <MaxHitPoints>500</MaxHitPoints>
+      <Flammability>0.4</Flammability>
+      <Mass>950</Mass>
+      <Bulk>95.4</Bulk>
+    </statBases>
+    <costList>
+     <Steel>340</Steel>
+      <ComponentIndustrial>11</ComponentIndustrial>
+    </costList>
+    <size>(2,2)</size>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <rotatable>true</rotatable>
+    <building>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>Gun_ZU23_Turret</turretGunDef>
+      <turretTopDrawSize>4.2</turretTopDrawSize>
+      <turretBurstCooldownTime>0.35</turretBurstCooldownTime>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_TurretTop</li>
+      <li>PlaceWorker_ShowTurretRadius</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>CE_TurretHeavyWeapons</li>
+    </researchPrerequisites>
+    <thingCategories Inherit="false"/>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseTurretGun">
+    <defName>Gun_ZU23_Turret</defName>
+    <label>ZU-23-2 turret</label>
+    <graphicData>
+      <texPath>Things/Building/ZU23/ZU_23_2_Turret</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <description>An twin-barrel cannon designed to be mounted on a turret, effective against infantry and light vehicles.</description>
+    <statBases>
+      <SightsEfficiency>1.1</SightsEfficiency>
+      <ShotSpread>0.01</ShotSpread>
+      <SwayFactor>1.53</SwayFactor>
+      <RangedWeapon_Cooldown>0.35</RangedWeapon_Cooldown>
+      <Mass>950</Mass>
+    </statBases>
+    <soundInteract>ZU23_Reload</soundInteract>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <recoilAmount>0.37</recoilAmount>
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_23x152mmB_AP</defaultProjectile>
+        <warmupTime>1.28</warmupTime>
+        <range>78</range>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <ticksBetweenBurstShots>2</ticksBetweenBurstShots>
+        <burstShotCount>20</burstShotCount>
+        <stopBurstWithoutLos>false</stopBurstWithoutLos>
+        <soundCast>ZU23_Fire</soundCast>
+        <soundCastTail>ZU23_Tail</soundCastTail>
+        <muzzleFlashScale>12</muzzleFlashScale>
+        <recoilPattern>Mounted</recoilPattern>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>100</magazineSize>
+        <reloadTime>11.7</reloadTime>
+        <ammoSet>AmmoSet_ZU23_Autocannon</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes">
+        <aiAimMode>SuppressFire</aiAimMode>
+        <aimedBurstShotCount>10</aimedBurstShotCount>
+        <noSingleShot>true</noSingleShot>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>
